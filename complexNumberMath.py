@@ -1,3 +1,11 @@
+import Tkinter
+from Tkinter import Canvas
+top = Tkinter.Tk()
+top.geometry("800x800")
+w = Canvas(top, width=top.width(), height=top.height())
+w.pack()
+w.create_line(0, 0, 50, 50)
+top.mainloop()
 complexNumber1 = input("Please input the first complex number : ")
 complexNumber2 = input("Please input the second complex number : ")
 firstComponents = complexNumber1.split(" ")
