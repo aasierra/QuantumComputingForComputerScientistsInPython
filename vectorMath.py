@@ -1,11 +1,10 @@
-
 class ComplexNumber:
 
     def getInverse(self):
         return ComplexNumber(-self.realValue, -self.imaginaryValue)
 
     def getScalared(self, scalar):
-        return ComplexNumber(scalar * self.realValue, scalar * self.imaginaryValue)
+        return ComplexNumber(self.realValue * scalar.realValue - self.imaginaryValue * scalar.imaginaryValue, self.realValue * scalar.imaginaryValue + scalar.realValue * self.imaginaryValue)
 
     def __init__(self, a, b):
         self.realValue = a
@@ -46,9 +45,9 @@ for numberString in splitVector1 :
 print("Inverse below : ")
 for number in vector1Array :
     print(number.getInverse())
-print("Scalar of 2 : ")
+print("Scalar of 2 + i : ")
 for number in vector1Array:
-    print(number.getScalared(2))
+    print(number.getScalared(ComplexNumber(2, 1)))
 vector2 = raw_input("Please input the second vector as a comma separated list of complex numbers of the format a + bi: ")
 splitVector2 = vector2.split(',')
 
